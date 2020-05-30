@@ -3,8 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { LoginPageComponent } from './login-page/login-page.component'
+import { SingUpPageComponent } from './sing-up-page/sing-up-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { ArticlePageComponent } from './article-page/article-page.component';
+import { GoodsPageComponent } from './goods-page/goods-page.component';
 
 const routes: Routes = [
+  {
+    path: 'goods',
+    component: GoodsPageComponent
+  },
+  {
+    path: 'article',
+    component: ArticlePageComponent
+  },
+  {
+    path: 'user',
+    component: UserPageComponent
+  },
+  {
+    path: 'singUp',
+    component: SingUpPageComponent
+  },
   {
     path: 'login',
     component: LoginPageComponent
