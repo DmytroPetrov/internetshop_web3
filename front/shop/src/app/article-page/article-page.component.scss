@@ -1,0 +1,131 @@
+$color_orange: rgb(255, 180, 45);
+$color_orange_light: rgb(255, 200, 155);
+
+.main {
+    background-color: whitesmoke;
+}
+
+.article {
+    background-color: whitesmoke;
+    display: flex;
+    //  flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & .back-link {
+        display: block;
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 20px;;
+
+        & a {
+            padding-left: 50px;
+            text-decoration: none;
+            color: rgb(216, 122, 0);
+        }
+
+        & span, span::before, span::after {
+            display: block;
+            background-color: black;
+            width: 20px;
+            height: 3px;
+            transform: translateY(13px);
+        }
+
+        & span {
+           // transform: 10px;
+           width: 35px;
+        }
+
+        & span {
+            
+            transition: 0.5s;
+
+            &::after, &::before {
+                content: '';
+            }
+
+            &::before {
+                transform: translateY(-5px) rotate(-30deg);
+            }
+
+            &::after {
+                transform: translateY(3px) rotate(30deg);
+            }
+        }
+    }
+}
+
+.photo-container, 
+.desciption,
+.behaviour,
+.price {
+    display: block;
+    width: 70%;
+}
+
+.price {
+    display: flex;
+    
+    box-shadow: 0px 8px 17px 5px rgba(102, 99, 92, 0.2);
+    flex-direction: column;
+    padding-left: 5px;
+    border-left: $color_orange solid 3px;
+}
+
+.price p {
+    padding-left: 15px;
+    color: rgb(25, 15, 15);
+    font-weight: bold;
+}
+
+.amount-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.amount {
+    display: block;
+    margin: 5px;
+}
+
+.plus,
+.btn-delay, 
+.btn-compare {
+    padding: 5px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 2px;
+    transition: 0.2s;
+    
+    & img {
+        width: 20px;
+    }
+
+    
+}
+
+.plus {
+    background-color: greenyellow;
+    
+    &:hover {
+        background-color: rgb(207, 250, 142);
+    }
+    
+}
+
+.btn-delay,
+.btn-compare {
+    
+    &:hover {
+        background-color: $color_orange;
+    }
+}

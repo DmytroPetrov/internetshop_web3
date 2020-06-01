@@ -7,8 +7,13 @@ import { SingUpPageComponent } from './sing-up-page/sing-up-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { GoodsPageComponent } from './goods-page/goods-page.component';
+import { ShopPageComponent } from './shop-page/shop-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: ShopPageComponent
+  },
   {
     path: 'goods',
     component: GoodsPageComponent
@@ -30,7 +35,7 @@ const routes: Routes = [
     component: LoginPageComponent
   },
   {
-    path: '',
+    path: '**',
     component: ErrorMessageComponent
   }
 ];
