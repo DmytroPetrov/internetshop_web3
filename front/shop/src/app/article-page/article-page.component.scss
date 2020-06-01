@@ -3,6 +3,10 @@ $color_orange_light: rgb(255, 200, 155);
 
 .main {
     background-color: whitesmoke;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex: 1 0 auto;
 }
 
 .article {
@@ -128,4 +132,9 @@ $color_orange_light: rgb(255, 200, 155);
     &:hover {
         background-color: $color_orange;
     }
+}
+
+.footer {
+    flex-shrink: 0;
+    padding: 5px;
 }

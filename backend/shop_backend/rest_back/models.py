@@ -95,6 +95,7 @@ class Order(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
+    isGroup = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

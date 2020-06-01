@@ -11,6 +11,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { GoodsPageComponent } from './goods-page/goods-page.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShopPageComponent } from './shop-page/shop-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShopPageComponent } from './shop-page/shop-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
