@@ -5,7 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
+
 export class LoginPageComponent implements OnInit {
+
+  email: String = "";
+  password: String = "";
+  btnDisabled = false;
 
   constructor() { }
 

@@ -18,5 +18,8 @@ class GoodsAPIView(APIView):
 class GroupAPIView(APIView):
     def get(self, request, group_id):
         art = Article.objects.filter(tags__id=group_id)
-        serial = ArticleSerializer(art, many=True)
-        return JsonResponse({'msg': serial.data},status = 200)
+        if art:
+            serial = ArticleSerializer(art, many=True)
+            if serial:
+                return JsonResponse({'articles': serial.data}, status=200)
+        return JsonResponse({'msg': 'Nothisng'},status = 404)

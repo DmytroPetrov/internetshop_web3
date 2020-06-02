@@ -17,10 +17,12 @@
                         <span>disreputable</span>
                     </p>
                     <p class="description">No Mind Required.</p>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email Address" />
-                    <input type="password" placeholder="Create a Password" />
-                    <button>Sign Up</button>
+
+                    <input type="text" [(ngModel)]="username" placeholder="Name" name="inpUserName"/>
+                    <input type="email" [(ngModel)]="email" placeholder="Email Address" name="inpEmail"/>
+                    <input type="password" [(ngModel)]="password" placeholder="Create a Password" name="inpPassword"/>
+
+                    <button type="button" (click)="registerNewUser()" [disabled]="btnDisabled" >Sign Up</button>
                     </div>
                 </form>
                 

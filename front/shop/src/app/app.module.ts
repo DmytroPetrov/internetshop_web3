@@ -12,6 +12,8 @@ import { GoodsPageComponent } from './goods-page/goods-page.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ShopPageComponent } from './shop-page/shop-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GoodsItemComponent } from './goods-item/goods-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { HttpClientModule } from '@angular/common/http';
     UserPageComponent,
     GoodsPageComponent,
     ArticlePageComponent,
-    ShopPageComponent
+    ShopPageComponent,
+    GoodsItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

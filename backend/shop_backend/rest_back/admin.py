@@ -4,7 +4,6 @@ from django.contrib import admin
 
 from .models import User, OrderStatus, PaymentType, Order, Article, Comment, Tag, Goods
 
-admin.site.register(User)
 admin.site.register(OrderStatus)
 admin.site.register(PaymentType)
 admin.site.register(Order)

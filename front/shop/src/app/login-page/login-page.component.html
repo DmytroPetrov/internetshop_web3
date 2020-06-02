@@ -18,9 +18,9 @@
                         <span>disreputable</span>
                     </p>
                     <p class="description">No Mind Required.</p>
-                    <input type="email" placeholder="Email Address" />
-                    <input type="password" placeholder="Password" />
-                    <button>Log In</button>
+                    <input type="email" [(ngModel)]="email" placeholder="Email Address" name="inpEmail"/>
+                    <input type="password" [(ngModel)]="password" placeholder="Password" name="inpPassword"/>
+                    <button type="button" [disabled]="btnDisabled">Log In</button>
                     </div>
                 </form>
                 
