@@ -10,7 +10,7 @@ $color_orange_light: rgb(255, 200, 155);
     box-shadow: 8px 8px 16px -8px black;
 
     & .user-nav {
-        padding-right: 40px;
+        padding-right: 50px;
         
         & a:hover {
             transition: all 0.3s;
@@ -26,6 +26,7 @@ $color_orange_light: rgb(255, 200, 155);
             position: absolute;
             background-color: #f1f1f1;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            right: 10px;
 
             &:hover {
                 display: block;

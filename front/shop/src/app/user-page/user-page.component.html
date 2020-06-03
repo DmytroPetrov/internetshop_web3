@@ -5,9 +5,9 @@
         <div class="wrapper">
             <ul class="wrapper__menu-ul">
                 <li><a href="#1">Personal info</a>
-                    <li>Name: <input type="text" placeholder="Name"></li>
-                    <li>email: <input type="email" placeholder="Email"></li>
-                    <li>phone: <input type="number" placeholder="Phone number"></li>
+                    <li>Username: <input type="text" [(ngModel)]="username" placeholder="Name"></li>
+                    <li>email: <input type="email" [(ngModel)]="email" placeholder="Email" disabled="true"></li>
+                    <li>NEW password: <input type="text" [(ngModel)]="password" placeholder="NEW Password"></li>
                     <li>Уси: </li>
                     <li>Лапи: </li>
                     <li>Хвост: 
@@ -21,8 +21,8 @@
                 </li>
             </ul>
             <div class="buttons-block">
-                <button class="btn-submin">Submit</button>
-                <button class="btn-delete">Delete myself</button>
+                <button class="btn-submin" (click)="patchUser()">Submit</button>
+                <button class="btn-delete" (click)="deleteUser()" >Delete myself</button>
             </div>
         </div>
     </div>
