@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LoginService {
-  constructor(
-    private http: HttpClient
-  ) {
+  baseUrl = 'http://127.0.0.1:8000'
+
+  httpHeaders = { headers : new HttpHeaders({'Content-Type': 'application/json'})}
+
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
+
+
+  loginUser(data): Observable<any> {
+    const body = {email: data.email, password: data.password}
+    const url = this.baseUrl + '/login/token/'
+
+    return this.http.post(url, body, this.httpHeaders)
   }
-  loginUser(user) {
-    return this.http.post('http://127.0.0.1:8000/login/token/', user);
-  }
-  getFamily(headers) {
-    return this.http.get('http://127.0.0.1:8000/family/', headers);
-  }
-  validate(token) {
-    return this.http.post('http://127.0.0.1:8000/login/verify/', token);
-  }
+
 }

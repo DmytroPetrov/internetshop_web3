@@ -4,8 +4,15 @@
         <a>Username</a>
         
         <div class="user-nav__content">
-            <a href="user">Profile</a>
-            <a href="login">Log Out</a>
+            <a href="user" [ngStyle]="{
+                display: hideOut ? 'none' : 'block'
+            }">Profile</a>
+            <a href="" (click)="logOut()" [ngStyle]="{
+                display: hideOut ? 'none' : 'block'
+            }" >Log Out</a>
+            <a href="login" class="btnLogin" [ngStyle]="{
+                display: hideOut ? 'block' : 'none'
+            }">Log in</a> 
         </div>
     </div>
 </div>

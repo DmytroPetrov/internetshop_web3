@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { RegistrationService } from './registration.service';
-import { registerNewUser }  from './registrationService'
+import { registerNewUser }  from './registrationService';
 import { TokenService } from '../token.service';
 import { Router } from '@angular/router';
 import  ValidateServ from '../services/ValidateServ';
