@@ -107,6 +107,7 @@ $shift: 150px;
     & .menu-ul {
         display: none;
         border-radius: 6px;
+
         & li, li a {
             width: auto;
             padding: 10px;
@@ -171,7 +172,6 @@ $shift: 150px;
 $square-side: 150px;
 
 .item {
-    background-color: lightyellow;
     width: $square-side;
     height: $square-side;
     border: 2px solid;
@@ -179,6 +179,12 @@ $square-side: 150px;
     padding: 0px;
     overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    height: fit-content;
+    
+    & a {
+        color: black;
+        text-decoration: none;
+    }
 
     & img {
         width: $square-side;

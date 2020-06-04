@@ -14,6 +14,7 @@ import { ShopPageComponent } from './shop-page/shop-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GoodsItemComponent } from './goods-item/goods-item.component';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     GoodsPageComponent,
     ArticlePageComponent,
     ShopPageComponent,
-    GoodsItemComponent
+    GoodsItemComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
