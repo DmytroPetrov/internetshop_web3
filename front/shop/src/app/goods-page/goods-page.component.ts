@@ -21,10 +21,16 @@ export class GoodsPageComponent implements OnInit {
   httpHeaders = ()=>{ return {headers : new HttpHeaders({'Content-Type': 'application/json'})}}
   items: GoodsItem[];
 
+  public groupId;
+
   constructor(private http: HttpClient,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.groupId = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.groupId);
+    
     this.getArticles().then((val) => {
       console.log(val);
       this.parseArticles(val);
@@ -39,7 +45,7 @@ export class GoodsPageComponent implements OnInit {
 
   getArticles(): Promise<any> {
     let promise = new Promise((resolve, reject) =>{
-      this.http.get(this.baseUrl + '/goods/group/' + 2, this.httpHeaders()).subscribe(value => {
+      this.http.get(this.baseUrl + '/goods/group/' + this.groupId, this.httpHeaders()).subscribe(value => {
         resolve(value['articles']);
       }, error => {
         

@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-article-page',
@@ -16,7 +17,8 @@ export class ArticlePageComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private activatedRoute: ActivatedRoute,) { }
+    private activatedRoute: ActivatedRoute,
+    private location: Location) { }
 
   public price = 'no price';
   public description = 'no description';
@@ -44,6 +46,10 @@ export class ArticlePageComponent implements OnInit {
     this.description = data['description'];
     this.behavior = data['behavior'];
     this.img_url = data['img_url'];
+  }
+
+  backClick() {
+    this.location.back();
   }
 
 }

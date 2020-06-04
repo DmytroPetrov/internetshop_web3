@@ -19,7 +19,7 @@ export class ShopPageComponent implements OnInit {
   httpHeaders = ()=>{ return {headers : new HttpHeaders({'Content-Type': 'application/json'})}}
   items: GroupItem[];
 
-  public groupsUrl = 'group/';
+  public groupsUrl = 'goods/';
 
   constructor(private http: HttpClient) { }
 
