@@ -19,7 +19,7 @@ const routes: Routes = [
     component: GoodsPageComponent
   },
   {
-    path: 'article',
+    path: 'article/:id',
     component: ArticlePageComponent
   },
   {

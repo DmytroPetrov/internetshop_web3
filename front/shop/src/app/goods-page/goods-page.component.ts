@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { GoodsItem } from '../goods-item/goods-item.component';
 
@@ -20,11 +21,14 @@ export class GoodsPageComponent implements OnInit {
   httpHeaders = ()=>{ return {headers : new HttpHeaders({'Content-Type': 'application/json'})}}
   items: GoodsItem[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getArticles().then((val) => {
       console.log(val);
+      this.parseArticles(val);
+      console.log('Here:\n' + this.items);
       
     }, 
     (er)=> {
@@ -47,6 +51,20 @@ export class GoodsPageComponent implements OnInit {
   }
 
   parseArticles(data) {
-    this.name = data['name']
+    data.forEach(it => {
+      console.log(it);
+      var one: GoodsItem = {
+        id: it['id'],
+        name: it['name'],
+        imgUrl: it['img_url'],
+        price: it['price']
+      };
+
+      if (!this.items)
+        this.items = [one];
+      else { 
+        this.items.push(one);
+      }
+    });
   }
 }

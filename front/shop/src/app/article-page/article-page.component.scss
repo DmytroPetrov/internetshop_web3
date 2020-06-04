@@ -68,6 +68,12 @@ $color_orange_light: rgb(255, 200, 155);
     width: 70%;
 }
 
+.photo-container {
+    & img {
+        width: inherit;
+    }
+}
+
 .price {
     display: flex;
     

@@ -4,4 +4,4 @@ from .models import OrderStatus, PaymentType, Order, Article, Comment, Tag, Good
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ['id', 'name', 'price', 'amount', 'behavior', 'description']
+        fields = ['id', 'name', 'price', 'img_url', 'amount', 'behavior', 'description']

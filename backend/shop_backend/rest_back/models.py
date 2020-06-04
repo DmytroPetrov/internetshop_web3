@@ -29,6 +29,7 @@ class Order(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=50)
     isGroup = models.BooleanField(default=False)
+    img_url = models.TextField(blank=True, null=True, default='https://img4.itbox.ua/200x200/prod_img/4/U0373294_big.jpg')
 
     def __str__(self):
         return self.name
@@ -36,6 +37,7 @@ class Tag(models.Model):
 class Article(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    img_url = models.TextField(blank=True, null=True, default='https://img4.itbox.ua/200x200/prod_img/4/U0373294_big.jpg')
     amount = models.IntegerField()
     behavior = models.TextField()
     description = models.TextField()

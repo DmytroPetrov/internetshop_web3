@@ -1,7 +1,8 @@
 <div class="item">
-    <a href="article">
-        <img src={{item.url}}>
+    <a href={{itemUrl}}{{item.id}}>
+        <img src={{item.imgUrl}} alt="item image">
         
         {{item.name}}
+        <span>{{item.price}} ₴</span>
     </a>
 </div>
