@@ -3,10 +3,11 @@
         <h3>Menu</h3>
         
         <ul class="menu-ul">     
-            <li><a href="goods">Computers</a></li>
-            <li><a href="goods">Phones</a></li>
-            <li><a href="goods">Drugs</a></li>
-            <li><a href="goods">Laptops</a></li>
+            <li *ngFor="let it of items">
+                <a href={{groupsUrl}}{{it.id}}>
+                    {{it.name}}
+                </a>
+            </li>
         </ul>
     </div>
 </div>

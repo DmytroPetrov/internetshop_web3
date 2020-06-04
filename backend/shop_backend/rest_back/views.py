@@ -32,3 +32,12 @@ class TagAPIView(APIView):
             if serial:
                 return JsonResponse({'groups': serial.data}, status=200)
         return JsonResponse({'msg': 'Nothisng'},status = 404)
+
+class TagListAPIView(APIView):
+    def get(self, request):
+        tags = Tag.objects.filter()
+        if tags:
+            serial = TagSerializer(tags, many=True)
+            if serial:
+                return JsonResponse({'groups': serial.data}, status=200)
+        return JsonResponse({'msg': 'Nothisng'},status = 404)

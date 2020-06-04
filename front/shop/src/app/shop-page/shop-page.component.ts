@@ -24,9 +24,9 @@ export class ShopPageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getArticles().then((val) => {
+    this.getGroups().then((val) => {
       console.log(val);
-      this.parseArticles(val);
+      this.parseGroups(val);
       console.log('Here:\n' + this.items);
       
     }, 
@@ -35,7 +35,7 @@ export class ShopPageComponent implements OnInit {
     });
   }
 
-  getArticles(): Promise<any> {
+  getGroups(): Promise<any> {
     let promise = new Promise((resolve, reject) =>{
       this.http.get(this.baseUrl + '/goods/groups/', this.httpHeaders()).subscribe(value => {
         resolve(value['groups']);
@@ -48,7 +48,7 @@ export class ShopPageComponent implements OnInit {
     return promise;
   }
 
-  parseArticles(data) {
+  parseGroups(data) {
     data.forEach(it => {
       console.log(it);
       var one: GroupItem = {
