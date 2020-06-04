@@ -1,0 +1,24 @@
+$content_padding: 100px;
+$color_orange: rgb(255, 180, 45);
+$color_orange_light: rgb(255, 200, 155);
+$square-side: 150px;
+
+.item {
+    background-color: lightyellow;
+    width: $square-side;
+    height: $square-side;
+    border: 2px solid;
+    margin: 8px;
+    padding: 0px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    & img {
+        width: $square-side;
+        height: $square-side;
+    }
+}
+
+.item:hover {
+    border-color: $color_orange_light;
+}

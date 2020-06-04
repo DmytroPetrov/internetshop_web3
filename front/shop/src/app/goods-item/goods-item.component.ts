@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface GoodsItem {
@@ -13,7 +13,7 @@ export interface GoodsItem {
 })
 export class GoodsItemComponent implements OnInit {
 
-  item: GoodsItem;
+  @Input() item: GoodsItem;
 
   constructor() { }
 
