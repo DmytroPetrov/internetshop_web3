@@ -4,6 +4,8 @@ import { CookieService } from 'ngx-cookie-service';
 import jwt_decode from 'jwt-decode';
 import { TokenService } from '../token.service';
 import { UserService } from '../user-page/user.service'
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +17,9 @@ export class NavBarComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private cookiesService: CookieService,
-    private serv: UserService) { }
+    private serv: UserService,
+    private location: Location,
+    private router: Router) { }
 
   private user;
 
@@ -56,9 +60,11 @@ export class NavBarComponent implements OnInit {
   }
 
   logOut() {
-    this.cookiesService.delete('access');
-    this.cookiesService.delete('refresh');
-    this.cookiesService.delete('username')
+    this.cookiesService.delete('access', '/');
+    this.cookiesService.delete('refresh', '/');
+    this.cookiesService.delete('username', '/');
+    window.location.reload();
+    
   }
 
 }

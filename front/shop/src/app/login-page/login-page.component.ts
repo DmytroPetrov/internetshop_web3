@@ -6,6 +6,7 @@ import { loginUser }  from './loginService';
 import { TokenService } from '../token.service';
 import { Router } from '@angular/router';
 import  ValidateServ from '../services/ValidateServ';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login-page',
@@ -24,7 +25,8 @@ export class LoginPageComponent implements OnInit {
     private http: HttpClient,
     private api: LoginService, 
     private token :TokenService,
-    private router: Router) { }
+    private router: Router,
+    private location: Location) { }
 
   ngOnInit(): void {
     
@@ -35,7 +37,7 @@ export class LoginPageComponent implements OnInit {
       "email" : this.email,
       "password": this.password,
     }
-    loginUser(this.api, this.token, data, this.router)
+    loginUser(this.api, this.token, data, this.router, this.location)
   }
 
 }

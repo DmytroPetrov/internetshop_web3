@@ -14,7 +14,11 @@
                 </li>
                 <li>
                     <a href="#2">Orders</a>
-                    <li>None
+                    
+                    <app-goods-item 
+                    *ngFor="let it of items"
+                    [item] = "it"
+                    ></app-goods-item>
                 </li>
                 <li>
                     <a href="#3">Docs</a>

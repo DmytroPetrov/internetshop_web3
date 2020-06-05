@@ -13,8 +13,8 @@
             <div class="price">
                 <p>{{price}}</p>
                 <div class="amount-container">
-                    <button class="plus">
-                        <img src="../../assets/svg/commerce-and-shopping.svg">
+                    <button class="plus" (click)="buyClick()">
+                        <img src={{buyBtnImg}}>
                     </button>
                     <button class="btn-delay">
                         <img src="../../assets/svg/commerce.svg">
@@ -23,6 +23,10 @@
                         <img src="../../assets/svg/education.svg">
                     </button>
                 </div>
+                <span 
+                [ngStyle]="{display: warning ? 'block' : 'none'}">
+                    Please, <a href="login">log in</a> to buy in The FISh.
+                </span>
             </div>
             <div class="desciption">
                 <h3>Description</h3>

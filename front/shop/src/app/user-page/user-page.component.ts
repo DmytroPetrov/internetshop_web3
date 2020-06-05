@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import ValidateServ from '../services/ValidateServ'
 
+import { GoodsItem } from '../goods-item/goods-item.component';
+
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
@@ -38,6 +40,8 @@ export class UserPageComponent implements OnInit {
 
   req: UserService;
 
+  items: GoodsItem[];
+
   private user = jwt_decode(this.tokenService.getAccess())
 
   ngOnInit(): void {
@@ -53,6 +57,9 @@ export class UserPageComponent implements OnInit {
           
         }
       );
+
+        this.showOrders()
+
     }else {
       this.router.navigate(['']);
     }
@@ -146,6 +153,51 @@ export class UserPageComponent implements OnInit {
       });
     });
     return promise;
+  }
+
+  showOrders() {
+    
+    this.getOrders().then((val) => {
+      console.log(val);
+      this.parseArticles(val);
+      console.log('Here:\n' + this.items);
+      
+    }, 
+    (er)=> {
+    console.log('Network problems');
+    });
+  }
+
+  getOrders(): Promise<any> {
+    
+    let promise = new Promise((resolve, reject) =>{
+      this.http.get(this.baseUrl + '/user/' + this.user.user_id + '/order', this.httpHeaders()).subscribe(value => {
+        resolve(value['articles']);
+      }, error => {
+        
+        console.log("There is a prob with network");
+        reject(error);
+      });
+    });
+    return promise;
+  }
+
+  parseArticles(data) {
+    data.forEach(it => {
+      console.log(it);
+      var one: GoodsItem = {
+        id: it['id'],
+        name: it['name'],
+        imgUrl: it['img_url'],
+        price: it['price']
+      };
+
+      if (!this.items)
+        this.items = [one];
+      else { 
+        this.items.push(one);
+      }
+    });
   }
 
 }
