@@ -117,5 +117,12 @@ describe('UserPageComponent', () => {
   it('patchRequest should return promise', () => {
     let pr = new Promise((resolve, reject)=> {})
   expect(typeof(component.patchRequest(1))).toBe(typeof(pr));
-});
+  });
+
+  // it('patchRequest', () => {
+  //   component.patchRequest(1).then((res) => {
+  //     expect(res).toBe(true);
+  //     done();
+  //   })
+  // });
 });
