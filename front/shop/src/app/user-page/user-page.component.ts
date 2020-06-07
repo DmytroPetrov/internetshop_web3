@@ -2,19 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 import jwt_decode from 'jwt-decode';
 import { TokenService } from '../token.service';
-import { UserService } from './user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import ValidateServ from '../services/ValidateServ'
 
 import { GoodsItem } from '../goods-item/goods-item.component';
 
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
-  styleUrls: ['./user-page.component.scss'],
-  providers: [UserService]
+  styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent implements OnInit {
 
@@ -38,13 +35,14 @@ export class UserPageComponent implements OnInit {
   email: String = "";
   password: String = "";
 
-  req: UserService;
-
   items: GoodsItem[];
 
   private user = jwt_decode(this.tokenService.getAccess())
 
   ngOnInit(): void {
+    console.log(this.tokenService.getAccess());
+    
+
     console.log(this.user.user_id);
     if (this.user != null){
       this.getUserInfo(this.user.user_id).then(
