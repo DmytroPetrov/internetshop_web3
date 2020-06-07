@@ -25,6 +25,7 @@ export class NavBarComponent implements OnInit {
 
   public username = 'Log in';
   public hideOut = true;
+  public isTest = false;
 
   ngOnInit(): void {
     
@@ -63,8 +64,9 @@ export class NavBarComponent implements OnInit {
     this.cookiesService.delete('access', '/');
     this.cookiesService.delete('refresh', '/');
     this.cookiesService.delete('username', '/');
-    window.location.reload();
-    
+    if (!this.isTest){
+      window.location.reload();
+    }
   }
 
 }
