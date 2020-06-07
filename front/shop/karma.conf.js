@@ -19,13 +19,13 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/shop'),
       /* 'coverage',  */reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
-      // //new
-      // thresholds: {
-      //   statements: 80,
-      //   lines: 80,
-      //   branches: 80,
-      //   functions: 80
-      // }
+      //new
+      thresholds: {
+        statements: 70,
+        lines: 70,
+        branches: 70,
+        functions: 70
+      }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,

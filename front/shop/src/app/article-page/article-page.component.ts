@@ -88,7 +88,6 @@ export class ArticlePageComponent implements OnInit {
           this.buyBtnImg = '../../assets/svg/commerce-and-shopping.svg';
         }, 2000);
         
-        
       }, 
       (er)=> {
       console.log('Network problems');
